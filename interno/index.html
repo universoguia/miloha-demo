@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel interno — Miloha Café (demo)</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Demo comercial navegable del panel de operación de Miloha Café.">
+<link rel="icon" href="../assets/logo-miloha.jpg?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/interno.css?v=2">
+</head>
+<body>
+
+<!-- ---------- Login visual (simulado) ---------- -->
+<div class="login-fondo" id="login">
+  <div class="login-caja">
+    <form class="login-form" data-accion="login" onsubmit="return false">
+      <img class="logo" src="../assets/logo-miloha.jpg?v=2" alt="Miloha Café">
+      <div class="rotulo">PANEL INTERNO · DEMO</div>
+
+      <label for="correo">Correo del equipo</label>
+      <input class="campo" id="correo" type="email" value="sofia@miloha.cafe" readonly>
+
+      <label for="clave">Clave</label>
+      <input class="campo clave" id="clave" type="password" value="demo1234" readonly>
+
+      <button class="btn-primario" type="submit" data-accion="login">Entrar al turno</button>
+      <div class="nota">Acceso de demostración: cualquier clic entra. Cada mesa tiene su QR propio.</div>
+      <a class="login-volver" href="/">← Volver al sitio público de Miloha</a>
+    </form>
+    <div class="login-qr">
+      <div class="qr"></div>
+      <div class="pie">Escaneá tu QR personal<br>para abrir el turno sin clave</div>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- Panel ---------- -->
+<div class="oculto" id="app">
+  <div class="topbar-movil">
+    <button class="menu-btn" data-accion="menu" aria-label="Abrir menú">☰</button>
+    <img src="../assets/logo-miloha.jpg?v=2" alt="Miloha Café">
+    <span class="rotulo">DEMO COMERCIAL</span>
+  </div>
+
+  <div class="app">
+    <aside class="side" id="side">
+      <div class="marca">
+        <img src="../assets/logo-miloha.jpg?v=2" alt="Miloha Café">
+        <div class="turno">TURNO TARDE · SALÓN</div>
+      </div>
+
+      <nav id="nav"></nav>
+
+      <div class="perfil">
+        <div class="av">SO</div>
+        <div class="datos"><b>Sofía O.</b><span>Salón · mozo</span></div>
+      </div>
+      <button class="salir" data-accion="logout">Cerrar turno</button>
+      <a class="publico" href="/">← Ir al sitio público</a>
+      <div class="sello">Demo comercial<br>Miloha Café</div>
+    </aside>
+
+    <div class="velo oculto" id="velo" data-accion="cerrar-menu"></div>
+
+    <main class="main">
+      <div class="main-head">
+        <div>
+          <h1 id="titulo">Mesas del salón</h1>
+          <div class="sub" id="subtitulo"></div>
+        </div>
+        <div class="estados">
+          <div class="pastilla"><span class="vivo"></span><span>En vivo · cocina conectada</span></div>
+          <div class="pastilla" id="alertas"></div>
+        </div>
+      </div>
+      <div id="contenido"></div>
+    </main>
+  </div>
+
+  <div class="sello-demo">Demo comercial · Miloha Café</div>
+</div>
+
+<script src="../assets/interno.js?v=2"></script>
+</body>
+</html>
