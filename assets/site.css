@@ -160,7 +160,10 @@ h1,h2,h3{text-wrap:pretty}
 
 /* ---- Fotos reales del local ----
    Los contenedores son grid con place-items:center, donde un height:100%
-   no resuelve contra la altura fija. Se posicionan en absoluto. */
-.hero .circulo,.tarjeta .foto,.visita .fotos div{position:relative;padding:0;overflow:hidden}
+   no resuelve contra la altura fija: las imagenes van en absoluto.
+   Ojo: .hero .circulo ya es position:absolute (lo ubica en la esquina),
+   asi que aca NO se toca su position. */
+.hero .circulo{padding:0;overflow:hidden}
+.tarjeta .foto,.visita .fotos div{position:relative;padding:0;overflow:hidden}
 .hero .circulo img,.tarjeta .foto img,.visita .fotos div img{
   position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
