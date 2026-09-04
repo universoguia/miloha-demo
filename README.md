@@ -98,3 +98,4 @@ así los enlaces entre `/` y `/interno/` funcionan igual que en Vercel.
   `/interno/` como `noindex` para que la demo no aparezca en buscadores.
 - Los espacios reservados `[foto]` son intencionales: quedan listos para reemplazar
   por fotos reales del local cuando estén disponibles.
+<!-- deploy -->
