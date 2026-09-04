@@ -27,7 +27,8 @@ miloha-demo/
 │   ├── site.css            Estilos del sitio público
 │   ├── interno.css         Estilos del panel interno
 │   ├── interno.js          Lógica del panel (estado en memoria)
-│   └── logo-miloha.jpg     Logo
+│   ├── logo-miloha.jpg     Logo
+│   └── fotos/              Fotos reales del local (6 archivos)
 ├── vercel.json             Configuración de despliegue
 └── README.md
 ```
@@ -96,5 +97,6 @@ así los enlaces entre `/` y `/interno/` funcionan igual que en Vercel.
   lateral se abre con el botón ☰.
 - `vercel.json` activa `cleanUrls` y `trailingSlash`, cachea `/assets/` y marca
   `/interno/` como `noindex` para que la demo no aparezca en buscadores.
-- Los espacios reservados `[foto]` son intencionales: quedan listos para reemplazar
-  por fotos reales del local cuando estén disponibles.
+- Las fotos reales del local viven en `assets/fotos/`. Para cambiar una, reemplazá
+  el archivo conservando el nombre; si agregás una nueva, sumala al `MENU` de
+  `assets/interno.js` con el campo `foto`.

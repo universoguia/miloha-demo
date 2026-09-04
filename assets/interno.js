@@ -5,16 +5,16 @@
 
   // ---------- Datos de la demo ----------
   var MENU = [
-    { id:'cap', name:'Cappuccino',          cat:'Café',     price:3.5, note:'Doble shot, leche texturada' },
-    { id:'ame', name:'Americano',           cat:'Café',     price:2.8, note:'Filtrado del día' },
-    { id:'lat', name:'Latte helado',        cat:'Café',     price:4.0, note:'Hielo, leche entera' },
-    { id:'v60', name:'V60',                 cat:'Café',     price:5.0, note:'Método, grano de origen' },
-    { id:'tea', name:'Té de jengibre',      cat:'Sin café', price:2.6, note:'Infusión en jarra' },
-    { id:'jug', name:'Jugo de naranja',     cat:'Sin café', price:3.2, note:'Recién exprimido' },
-    { id:'san', name:'Sándwich de pollo',   cat:'Comida',   price:6.5, note:'Pan de masa madre' },
-    { id:'tos', name:'Tostado mixto',       cat:'Comida',   price:5.4, note:'Jamón y queso' },
-    { id:'med', name:'Medialunas (x2)',     cat:'Dulce',    price:2.9, note:'De manteca' },
-    { id:'tor', name:'Torta de chocolate',  cat:'Dulce',    price:4.5, note:'Porción generosa' }
+    { id:'cap', name:'Cappuccino',          cat:'Café',     price:3.5, note:'Doble shot, leche texturada' , foto:'cafe-latte'},
+    { id:'ame', name:'Americano',           cat:'Café',     price:2.8, note:'Filtrado del día' , foto:'cafe-latte'},
+    { id:'lat', name:'Latte helado',        cat:'Café',     price:4.0, note:'Hielo, leche entera' , foto:'cafe-latte'},
+    { id:'v60', name:'V60',                 cat:'Café',     price:5.0, note:'Método, grano de origen' , foto:'cafe-latte'},
+    { id:'tea', name:'Té de jengibre',      cat:'Sin café', price:2.6, note:'Infusión en jarra' , foto:'postre-frutas'},
+    { id:'jug', name:'Jugo de naranja',     cat:'Sin café', price:3.2, note:'Recién exprimido' , foto:'postre-frutas'},
+    { id:'san', name:'Sándwich de pollo',   cat:'Comida',   price:6.5, note:'Pan de masa madre' , foto:'tostada'},
+    { id:'tos', name:'Tostado mixto',       cat:'Comida',   price:5.4, note:'Jamón y queso' , foto:'tostada'},
+    { id:'med', name:'Medialunas (x2)',     cat:'Dulce',    price:2.9, note:'De manteca' , foto:'postre-frutas'},
+    { id:'tor', name:'Torta de chocolate',  cat:'Dulce',    price:4.5, note:'Porción generosa' , foto:'torta-chocolate'}
   ];
   var CATS = ['Café', 'Sin café', 'Comida', 'Dulce'];
   var MODOS = ['Salón', 'Take away', 'Delivery'];
@@ -200,7 +200,9 @@
     }).join('');
 
     var items = MENU.filter(function (m) { return m.cat === s.cat; }).map(function (m) {
-      return '<div class="item"><div class="foto">[foto]</div><div class="cuerpo">' +
+      return '<div class="item"><div class="foto">' +
+        '<img src="../assets/fotos/' + m.foto + '.jpg?v=2" alt="' + esc(m.name) + '" loading="lazy">' +
+        '</div><div class="cuerpo">' +
         '<div class="fila"><span class="nombre">' + esc(m.name) + '</span>' +
         '<span class="precio">' + money(m.price) + '</span></div>' +
         '<div class="nota">' + esc(m.note) + '</div>' +
@@ -276,7 +278,9 @@
     }).join('');
 
     var items = MENU.filter(function (m) { return m.cat === s.cat; }).map(function (m) {
-      return '<div class="carta-item"><div class="foto">[foto]</div>' +
+      return '<div class="carta-item"><div class="foto">' +
+        '<img src="../assets/fotos/' + m.foto + '.jpg?v=2" alt="' + esc(m.name) + '" loading="lazy">' +
+        '</div>' +
         '<div class="txt"><div class="n">' + esc(m.name) + '</div>' +
         '<div class="d">' + esc(m.note) + '</div></div>' +
         '<div class="p">' + money(m.price) + '</div></div>';
